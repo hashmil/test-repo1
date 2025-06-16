@@ -1,10 +1,9 @@
 "use client";
 
-import Image from "next/image";
+import { motion } from "framer-motion";
 import Link from "next/link";
 
-import { motion } from "framer-motion";
-
+import ProjectCard from "../../components/ProjectCard";
 import { projects } from "../../data/projects";
 
 export default function ProjectsPage() {
@@ -24,36 +23,15 @@ export default function ProjectsPage() {
               key={project.slug}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              className="project-card bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-              <div className="relative h-48">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover"
+              transition={{ delay: index * 0.1 }}>
+              <Link href={`/projects/${project.slug}`} className="block">
+                <ProjectCard
+                  title={project.title}
+                  description={project.description}
+                  image={project.image}
+                  tags={project.tags}
                 />
-              </div>
-              <div className="p-6">
-                <h2 className="text-xl font-bold mb-2">{project.title}</h2>
-                <p className="text-text-secondary mb-4 line-clamp-2">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <Link
-                  href={`/projects/${project.slug}`}
-                  className="inline-block text-primary hover:underline">
-                  View Details →
-                </Link>
-              </div>
+              </Link>
             </motion.div>
           ))}
         </div>
