@@ -4,9 +4,9 @@ import ProjectContent from "./ProjectContent";
 import { projects } from "../../../data/projects";
 
 interface ProjectPageProps {
-  params: Promise<{
+  params: {
     slug: string;
-  }>;
+  };
 }
 
 export async function generateStaticParams() {
