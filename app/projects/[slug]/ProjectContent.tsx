@@ -102,7 +102,7 @@ export default function ProjectContent({ project }: ProjectContentProps) {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">
+                    className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-colors inline-flex items-center gap-2">
                     View Live Project
                     <svg
                       className="w-4 h-4"
