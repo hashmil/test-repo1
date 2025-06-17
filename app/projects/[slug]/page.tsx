@@ -1,12 +1,13 @@
 import { notFound } from "next/navigation";
 
-import ProjectContent from "./ProjectContent";
 import { projects } from "../../../data/projects";
 
+import ProjectContent from "./ProjectContent";
+
 interface ProjectPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {

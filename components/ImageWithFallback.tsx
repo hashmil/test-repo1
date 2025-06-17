@@ -25,7 +25,8 @@ export default function ImageWithFallback({
     setError(false);
   }, [src]);
 
-  const fallbackImage = "/images/placeholder.jpg";
+  const fallbackImage =
+    "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0xNzUgMTIwTDIwMCAxNDBMMjI1IDEyMEwyNTAgMTUwTDI3NSAxMzBMMzAwIDE3MEgxMDBMMTI1IDE0MEwxNTAgMTIwTDE3NSAxMjBaIiBmaWxsPSIjREREREREIi8+CjxjaXJjbGUgY3g9IjE0MCIgY3k9IjEwMCIgcj0iMTAiIGZpbGw9IiNEREREREQiLz4KPHRleHQgeD0iMjAwIiB5PSIyMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM5OTk5OTkiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCI+SW1hZ2UgTm90IEZvdW5kPC90ZXh0Pgo8L3N2Zz4K";
 
   return (
     <Image
