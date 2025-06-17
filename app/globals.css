@@ -125,3 +125,72 @@ body {
 .dark .glow {
   box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
 }
+
+/* GSAP Hero Animations */
+.floating-element {
+  filter: blur(1px);
+}
+
+.hero-cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: white;
+  mix-blend-mode: difference;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Enhanced gradient animations */
+.gradient-text-animated {
+  background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #f5576c, #667eea);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-shift-enhanced 4s ease infinite;
+}
+
+@keyframes gradient-shift-enhanced {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+}
+
+/* Magnetic button effects */
+.magnetic-button {
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.magnetic-button:hover {
+  transform: scale(1.05);
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  animation: scroll-bounce 2s infinite;
+}
+
+@keyframes scroll-bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}

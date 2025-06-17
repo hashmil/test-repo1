@@ -1,11 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Mail, Github, Linkedin, Download, Star } from "lucide-react";
-import Image from "next/image";
+import { ArrowRight, Mail, Github, Linkedin, Star } from "lucide-react";
 import Link from "next/link";
 
 import Header from "../components/Header";
+import HeroSection from "../components/HeroSection";
 import ProjectCard from "../components/ProjectCard";
 import { projects } from "../data/projects";
 
@@ -29,114 +29,8 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="pt-20">
-        {/* Hero Section */}
-        <motion.section
-          className="min-h-screen flex items-center justify-center relative overflow-hidden"
-          initial="initial"
-          animate="animate"
-          variants={staggerContainer}
-        >
-          {/* Background gradient orbs */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse" />
-            <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-pink-400 to-red-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse" style={{ animationDelay: "2s" }} />
-            <div className="absolute top-40 left-1/2 transform -translate-x-1/2 w-60 h-60 bg-gradient-to-r from-green-400 to-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse" style={{ animationDelay: "4s" }} />
-          </div>
-          
-          <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
-            <motion.div 
-              variants={fadeInUp}
-              className="mb-8 relative w-40 h-40 mx-auto"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 rounded-full blur-md opacity-75" />
-              <Image
-                src="https://picsum.photos/160/160?random=100"
-                alt="Profile"
-                fill
-                className="rounded-full object-cover relative z-10 border-4 border-white dark:border-gray-800"
-                priority
-              />
-            </motion.div>
-            
-            <motion.h1 
-              variants={fadeInUp}
-              className="text-7xl md:text-8xl font-bold mb-6 gradient-text leading-tight"
-            >
-              Hi, I&apos;m Alex
-            </motion.h1>
-            
-            <motion.p 
-              variants={fadeInUp}
-              className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed"
-            >
-              A passionate <span className="text-primary font-semibold">Full Stack Developer</span> crafting beautiful and functional web experiences with modern technologies
-            </motion.p>
-            
-            <motion.div 
-              variants={fadeInUp}
-              className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
-            >
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link
-                  href="#projects"
-                  className="group inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:from-blue-700 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl"
-                >
-                  View My Work
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </motion.div>
-              
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <a
-                  href="#contact"
-                  className="group inline-flex items-center gap-2 glass border px-8 py-4 rounded-full font-semibold hover:bg-accent transition-all"
-                >
-                  <Mail className="w-4 h-4" />
-                  Get In Touch
-                </a>
-              </motion.div>
-            </motion.div>
-            
-            <motion.div 
-              variants={fadeInUp}
-              className="flex justify-center gap-6"
-            >
-              <motion.a
-                whileHover={{ scale: 1.2, y: -2 }}
-                href="https://github.com/yourusername"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 glass rounded-full hover:bg-accent transition-colors"
-                aria-label="GitHub"
-              >
-                <Github className="w-5 h-5" />
-              </motion.a>
-              
-              <motion.a
-                whileHover={{ scale: 1.2, y: -2 }}
-                href="https://linkedin.com/in/yourprofile"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 glass rounded-full hover:bg-accent transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-5 h-5" />
-              </motion.a>
-              
-              <motion.a
-                whileHover={{ scale: 1.2, y: -2 }}
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 glass rounded-full hover:bg-accent transition-colors"
-                aria-label="Download Resume"
-              >
-                <Download className="w-5 h-5" />
-              </motion.a>
-            </motion.div>
-          </div>
-        </motion.section>
+      <HeroSection />
+      <main>
 
         {/* Featured Projects Section */}
         <motion.section 
